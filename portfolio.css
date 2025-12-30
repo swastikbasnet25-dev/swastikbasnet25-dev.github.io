@@ -1,191 +1,218 @@
+/* ---------- ROOT THEME ---------- */
+:root {
+    --bg: #0f172a;
+    --card: rgba(255, 255, 255, 0.06);
+    --accent: #38bdf8;
+    --accent-soft: #7dd3fc;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --radius: 18px;
+    --blur: blur(12px);
+}
+
+/* ---------- GLOBAL ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comfortaa", sans-serif;
+}
+
 body {
-    background-color: black;
-    color: white;
+    background: linear-gradient(180deg, #020617, #0f172a);
+    color: var(--text);
+    min-height: 100vh;
 }
 
+center {
+    width: 100%;
+}
+
+/* ---------- MODE ICON ---------- */
 #mode-button {
-    font-size: 40px;
-    padding: 10px;
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    font-size: 1.4rem;
     cursor: pointer;
+    color: var(--accent);
+    opacity: 0.8;
+    transition: transform 0.3s;
+}
+#mode-button:hover {
+    transform: rotate(180deg);
 }
 
-.icon-light-mode{
-    transition: 1s;
-    color: black;
+/* ---------- SECTIONS ---------- */
+section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 40px;
+    background: var(--card);
+    backdrop-filter: var(--blur);
+    border-radius: var(--radius);
+    animation: fadeUp 0.9s ease both;
 }
 
-.light-mode {
-    background-color: white;
-    transition: 1s;
-    color: black;
-}
-
+/* ---------- PROFILE ---------- */
 #profile-photo {
-    /* height: 250px; */
-    width: 250px;
-    margin-top: 50px;
-    border-radius: 130px;
-}
-
-p {
-    font-size: 40px;
-    font-family: 'Comfortaa';
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    margin-bottom: 16px;
 }
 
 h1 {
-    font-family: 'Archivo Black';
-    font-size: 50px;
-    margin: 50px 0px;
-    margin-bottom: 0px;
+    font-family: "Archivo Black", sans-serif;
+    letter-spacing: 1px;
 }
 
-#profile-intro-container {
-    background-color: rgb(222, 112, 255);
-    height: fit-content;
-    width: fit-content;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    border-radius: 20px;
+h1 br {
+    display: none;
+}
+
+/* ---------- CONTACT ICONS ---------- */
+#contact-details-container-outer {
     display: flex;
-    flex-direction: row;
-}
-
-#profile-intro-text,
-#project-text {
-    font-family: 'Comfortaa';
-    color: black;
-    font-size: 30px;
-    font-weight: 800;
-    line-height: 40px;
-}
-
-#profile-text-container {
-    max-width: 600px;
-    margin-right: 50px;
-}
-
-span {
-    color: white;
-}
-
-#hajimemashite {
-    color: black;
-    font-weight: 100;
-}
-
-#computer-image,
-#project-image,
-#skillset-image {
-    height: 300px;
-    width: 300px;
-}
-
-#project-header-text {
-    color: black;
-    font-size: 30px;
-    font-weight: 800;
-}
-
-#project-intro-container {
-    background-color: rgb(112, 255, 160);
-    height: fit-content;
-    width: fit-content;
     justify-content: center;
-    align-items: center;
-    padding: 30px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-#project-text-container {
-    max-width: 600px;
-    margin-left: 50px;
-}
-
-#github-link {
-    color: black;
-    text-decoration: none;
-}
-
-#skill-intro-container-outer {
-    background-color: rgb(112, 188, 255);
-    height: fit-content;
-    width: fit-content;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 30px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-}
-
-#skill-intro-container-inner {
-    max-width: 600px;
-    margin-right: 50px;
-}
-
-#html-image,
-#js-image,
-#c-image,
-#cpp-image,
-#python-image,
-#mysql-image,
-#firebase-image {
-    height: 150px;
-    width: 150px;
-}
-
-.skill-images-container {
-    height: 150px;
-    width: 150px;
-    margin: 30px;
-    display: inline-block;
-}
-
-.skill-text {
-    font-family: 'Comfortaa';
-    color: black;
-    font-size: 30px;
-    margin: 10px 0px;
-    font-weight: 800;
-    text-align: center;
-}
-
-#js-text {
-    width: fit-content;
-    margin-left: -10px;
-}
-
-.contact-details-container-inner {
-    display: inline-block;
-    margin-top: 10px;
-    margin-bottom: 60px;
-
+    gap: 18px;
+    margin: 25px 0;
 }
 
 .contact-details {
-    font-family: 'Comfortaa';
-    margin: 0px 40px;
-    font-size: 40px;
+    font-size: 1.3rem;
+    color: var(--accent);
+    padding: 12px;
+    border-radius: 50%;
+    background: rgba(56, 189, 248, 0.15);
+    transition: all 0.3s ease;
 }
 
-a {
-    color: white;
+.contact-details:hover {
+    background: var(--accent);
+    color: #020617;
+    transform: translateY(-4px);
+}
+
+/* ---------- INTRO ---------- */
+#profile-intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+#profile-intro-text {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+#profile-intro-text span {
+    color: var(--accent-soft);
+    font-weight: 600;
+}
+
+#computer-image {
+    width: 220px;
+    opacity: 0.85;
+}
+
+/* ---------- PROJECTS ---------- */
+#project-intro-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+#project-image {
+    width: 140px;
+}
+
+#project-header-text {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#github-link {
+    color: var(--accent);
     text-decoration: none;
+    font-weight: 600;
 }
 
-@media screen and (max-width: 980px) {
-    #profile-intro-container {
-        width: 87%;
-    }
+#github-link:hover {
+    text-decoration: underline;
+}
 
-    #project-intro-container {
-        width: 87%;
-    }
+/* ---------- SKILLS ---------- */
+#skill-intro-container-outer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
 
+#skill-intro-container-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 25px;
+}
+
+.skill-images-container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 18px;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.skill-images-container:hover {
+    transform: translateY(-6px);
+}
+
+.skill-images-container img {
+    width: 45px;
+    margin-bottom: 8px;
+}
+
+.skill-text {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+#skillset-image {
+    width: 220px;
+    opacity: 0.8;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    #profile-intro-container,
+    #project-intro-container,
     #skill-intro-container-outer {
-        width: 87%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #computer-image,
+    #project-image,
+    #skillset-image {
+        width: 160px;
     }
 }
