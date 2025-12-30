@@ -1,110 +1,218 @@
-<html>
+/* ---------- ROOT THEME ---------- */
+:root {
+    --bg: #0f172a;
+    --card: rgba(255, 255, 255, 0.06);
+    --accent: #38bdf8;
+    --accent-soft: #7dd3fc;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --radius: 18px;
+    --blur: blur(12px);
+}
 
-<head>
-    <title>
-        My Portfolio
-    </title>
-</head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Comfortaa:wght@300..700&family=Didact+Gothic&display=swap"
-    rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Didact+Gothic&display=swap"
-    rel="stylesheet">
-<link rel="stylesheet" href="portfolio.css">
+/* ---------- GLOBAL ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comfortaa", sans-serif;
+}
 
-<body>
-    <center>
-        <i class="fa-solid fa-circle-half-stroke" id="mode-button"></i>
-        <section>
-            <img id="profile-photo" src="images/swastik.jpeg" alt="Profile Photo">
-            <h1>Swastik Basnet<br>स्वस्तिक बस्नेत</h1>
+body {
+    background: linear-gradient(180deg, #020617, #0f172a);
+    color: var(--text);
+    min-height: 100vh;
+}
 
-            <div id="contact-details-container-outer">
-                <div class="contact-details-container-inner">
-                    <a href="mailto: swastikbasnet25@gmail.com"><span class="contact-details"><i
-                                class="fa-solid fa-envelope"></i></span></a>
-                </div>
-                <div class="contact-details-container-inner">
-                    <a href="https://www.linkedin.com/in/swastik-basnet/"><span class="contact-details"><i
-                                class="fa-brands fa-linkedin"></i></span></a>
-                </div>
-                <div class="contact-details-container-inner">
-                    <a href="https://www.instagram.com/swatt_10/"><span
-                            class="contact-details"><i class="fa-brands fa-instagram"></i></span></a>
-                </div>
-                <div class="contact-details-container-inner">
-                    <a href="https://x.com/notnotttt123"><span
-                            class="contact-details"><i class="fa-brands fa-x-twitter"></i></span></a>
-                </div>
-            </div>
+center {
+    width: 100%;
+}
 
-            <div id="profile-intro-container">
-                <div id="profile-text-container">
+/* ---------- MODE ICON ---------- */
+#mode-button {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--accent);
+    opacity: 0.8;
+    transition: transform 0.3s;
+}
+#mode-button:hover {
+    transform: rotate(180deg);
+}
 
-        <p id="profile-intro-text">Hi! <span id="hajimemashite">नमस्ते!</span>I build modern full-stack apps using 
-            <span> Node.js, React</span>, and <span> FastAPI. </span> with solid back-end 
-            skills in <span>Mysql, MongoDB</span>, and  <span>REST APIs</span>  I'm also 
-            exploring  <span>Data Analysis with Python </span> and <span>Docker </span>
-            I enjoy solving real-world problems through clean, scalable code. 
-            Outside tech, I love cycling, hike, travel, and watching movies.
-                    </p>
-                </div>
-                <img id="computer-image" src="images/programming.png">
-            </div>
-            <section>
-                <p>Projects</p>
-                <div id="project-intro-container">
-                    <img id="project-image" src="images/project.png">
-                    <div id="project-text-container">
-                        <p id="project-header-text">Visit my GitHub profile for a glimpse into my web development
-                            journey!</p>
-                        <p id="project-text"><a id="github-link" href="https://github.com/swastikbasnet25-dev"><i
-                                    class="fa-brands fa-github"></i> swastikbasnet25-dev</a></p>
-                    </div>
-                </div>
-            </section>
-        </section>
-        <section>
-            <p>Skillset</p>
-            <div id="skill-intro-container-outer">
-                <div id="skill-intro-container-inner">
-                    <div class="skill-images-container">
-                        <img id="html-image" src="images\html-5.png">
-                        <p class="skill-text">HTML-5</p>
-                    </div>
-                    <div class="skill-images-container">
-                        <img id="js-image" src="images/js.png">
-                        <p class="skill-text" id="js-text">JavaScript</p>
-                    </div>
-                    <div class="skill-images-container">
-                        <img id="c-image" src="images/c-.png">
-                        <p class="skill-text">C</p>
-                    </div>
-                    <div class="skill-images-container">
-                        <img id="python-image" src="images/python.png">
-                        <p class="skill-text">Python</p>
-                    </div>
-                    <div class="skill-images-container">
-                        <img id="mysql-image" src="images/sql_9544010.png">
-                        <p class="skill-text">MySQL</p>
-                    </div>
-                   
-                </div>
-                <img src="images/skillset.png" id="skillset-image">
-            </div>
-        </section>
-        <section>
-            <p></p>
-        </section>
-    </center>
-</body>
-<script src="portfolio.js"></script>
+/* ---------- SECTIONS ---------- */
+section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 40px;
+    background: var(--card);
+    backdrop-filter: var(--blur);
+    border-radius: var(--radius);
+    animation: fadeUp 0.9s ease both;
+}
 
-</html>
+/* ---------- PROFILE ---------- */
+#profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    margin-bottom: 16px;
+}
+
+h1 {
+    font-family: "Archivo Black", sans-serif;
+    letter-spacing: 1px;
+}
+
+h1 br {
+    display: none;
+}
+
+/* ---------- CONTACT ICONS ---------- */
+#contact-details-container-outer {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.contact-details {
+    font-size: 1.3rem;
+    color: var(--accent);
+    padding: 12px;
+    border-radius: 50%;
+    background: rgba(56, 189, 248, 0.15);
+    transition: all 0.3s ease;
+}
+
+.contact-details:hover {
+    background: var(--accent);
+    color: #020617;
+    transform: translateY(-4px);
+}
+
+/* ---------- INTRO ---------- */
+#profile-intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+#profile-intro-text {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+#profile-intro-text span {
+    color: var(--accent-soft);
+    font-weight: 600;
+}
+
+#computer-image {
+    width: 220px;
+    opacity: 0.85;
+}
+
+/* ---------- PROJECTS ---------- */
+#project-intro-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+#project-image {
+    width: 140px;
+}
+
+#project-header-text {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#github-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#github-link:hover {
+    text-decoration: underline;
+}
+
+/* ---------- SKILLS ---------- */
+#skill-intro-container-outer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+#skill-intro-container-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 25px;
+}
+
+.skill-images-container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 18px;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.skill-images-container:hover {
+    transform: translateY(-6px);
+}
+
+.skill-images-container img {
+    width: 45px;
+    margin-bottom: 8px;
+}
+
+.skill-text {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+#skillset-image {
+    width: 220px;
+    opacity: 0.8;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    #profile-intro-container,
+    #project-intro-container,
+    #skill-intro-container-outer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #computer-image,
+    #project-image,
+    #skillset-image {
+        width: 160px;
+    }
+}
